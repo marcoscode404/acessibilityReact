@@ -1,5 +1,5 @@
 ## criando projeto
-# yarn create next-app 
+# - yarn create next-app
 
 
 
