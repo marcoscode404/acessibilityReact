@@ -20,7 +20,7 @@ export default function Home() {
       <main>
         <article className={styles.content}>
           <header>
-            <h2>Desenvolvendo uma web acessível</h2>
+            <h2>Desenvolvendo uma web acessível.</h2>
 
             <h4>Protocolos e diretrizes orientam o desenvolvimento de tecnologias acessíveis, mas é preciso olhar para além de tudo isso</h4>
           </header>
