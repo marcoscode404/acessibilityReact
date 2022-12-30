@@ -1,5 +1,11 @@
-## criando projeto
+<!-- criando projeto -->
 # - yarn create next-app
+
+-----------------------------------------------------------
+<!-- integrando o @axe-core para pegar feedback do projeto -->
+## axe DevTools - Web Accessibility Testing           <------ plugin
+# yarn add @axe-core/react -D
+
 
 
 
