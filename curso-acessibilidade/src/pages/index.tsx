@@ -31,7 +31,7 @@ export default function Home() {
         </article>
       </main>
 
-      <footer className={styles.header}>
+      <footer className={styles.footer}>
         <Image src={LogoImg} alt={'Blog da Rocketseat'} width={286 / 2} />
 
         <nav className={styles.nav} aria-label="Rodpé">
