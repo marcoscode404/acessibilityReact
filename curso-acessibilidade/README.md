@@ -14,4 +14,7 @@
 <!-- sugestão de pesquisa para boas praticas 
  - Wai-aria roles
  - plugin para o browser - Landmark Navigation via Keyboard or Pop-up
+
+ - plugin para leitores de tela
+ - Screen Reader
  -->
