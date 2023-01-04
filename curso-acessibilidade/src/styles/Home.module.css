@@ -43,10 +43,43 @@
     padding: 24px 20px;
 }
 
-.footer a {
+.footer button {
     padding: 1rem 2rem;
     background: #202024;
     border-radius: 5px;
-
+    background: transparent;
     color: #996dff;
+    font-size: 1rem;
+}
+
+/* modal style */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 120px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.modal h2 {
+    background: #fff;
+}
+
+.modal p {
+    background: #fff;
+}
+
+.modal button{
+    color: #fff;
+    background: #6134cc;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-bottom-left-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold;
 }
