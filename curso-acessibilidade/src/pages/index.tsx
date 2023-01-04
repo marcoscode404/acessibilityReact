@@ -14,10 +14,10 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if(isModalOpen) {
+    if (isModalOpen) {
       modalRef?.current?.focus()
     }
-  },[isModalOpen])
+  }, [isModalOpen])
 
   return (
     <>
@@ -53,7 +53,7 @@ export default function Home() {
         <Image src={LogoImg} alt={'Blog da Rocketseat'} width={286 / 2} />
 
         <nav className={styles.nav} aria-label="Rodpé">
-          <button type='button' onClick={handleModalOpen}>
+          <button type='button' onClick={handleModalOpen} aria-controls='modal1'>
             Termos de uso
           </button>
         </nav>
@@ -61,7 +61,14 @@ export default function Home() {
 
       {/* modal */}
       {isModalOpen && (
-        <div ref={modalRef} className={styles.modal} role="dialog" arial-aria-labelledby='modal1Title' aria-describedby='modal1Description' tabIndex={-1}>
+        <div
+        id='modal1'
+          ref={modalRef}
+          className={styles.modal}
+          role="dialog"
+          arial-aria-labelledby='modal1Title'
+          aria-describedby='modal1Description'
+          tabIndex={-1}>
           <button onClick={(e) => setIsModalOpen(false)} className={styles.buttonClose}>X</button>
           <h2 id='modal1Title'>Termos de uso</h2>
           <p id='modal1Description'>esse são os temos de uso</p>
