@@ -1,16 +1,23 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import LogoImg from '../assets/logo.svg';
 
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const modalRef = useRef(null)
 
   function handleModalOpen() {
     setIsModalOpen(true)
   }
+
+  useEffect(() => {
+    if(isModalOpen) {
+      modalRef?.current?.focus()
+    }
+  },[isModalOpen])
 
   return (
     <>
@@ -54,10 +61,10 @@ export default function Home() {
 
       {/* modal */}
       {isModalOpen && (
-        <div className={styles.modal}>
+        <div ref={modalRef} className={styles.modal} role="dialog" arial-aria-labelledby='modal1Title' aria-describedby='modal1Description' tabIndex={-1}>
           <button onClick={(e) => setIsModalOpen(false)} className={styles.buttonClose}>X</button>
-          <h2>Termos de uso</h2>
-          <p>esse são os temos de uso</p>
+          <h2 id='modal1Title'>Termos de uso</h2>
+          <p id='modal1Description'>esse são os temos de uso</p>
         </div>
       )}
     </>
