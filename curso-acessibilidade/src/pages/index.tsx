@@ -1,6 +1,7 @@
+import * as Dialog from '@radix-ui/react-dialog'
+
 import Head from 'next/head';
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
 import LogoImg from '../assets/logo.svg';
 
 import styles from '../styles/Home.module.css';
@@ -41,17 +42,29 @@ export default function Home() {
         <Image src={LogoImg} alt={'Blog da Rocketseat'} width={286 / 2} />
 
         <nav className={styles.nav} aria-label="Rodpé">
-          <button type='button'>
-            Termos de uso
-          </button>
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <button type='button'>
+                Termos de uso
+              </button>
+            </Dialog.Trigger>
+            <Dialog.Portal>
+              <Dialog.Overlay className={styles.overlay}/>
+
+              <Dialog.Content className={styles.modal}>
+                <Dialog.Title>Termos de uso</Dialog.Title>
+                <Dialog.Description>esse são os temos de uso</Dialog.Description>
+                <Dialog.Close className={styles.closeModalButton} asChild>
+                  <button>
+                    Fechar
+                  </button>
+                </Dialog.Close>
+              </Dialog.Content>
+            </Dialog.Portal>
+
+          </Dialog.Root>
         </nav>
       </footer>
-
-      {/* modal */}
-      <div className={styles.modal}>
-        <h2 >Termos de uso</h2>
-        <p>esse são os temos de uso</p>
-      </div>
     </>
   )
 }
