@@ -6,18 +6,6 @@ import LogoImg from '../assets/logo.svg';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const modalRef = useRef(null)
-
-  function handleModalOpen() {
-    setIsModalOpen(true)
-  }
-
-  useEffect(() => {
-    if (isModalOpen) {
-      modalRef?.current?.focus()
-    }
-  }, [isModalOpen])
 
   return (
     <>
@@ -53,27 +41,17 @@ export default function Home() {
         <Image src={LogoImg} alt={'Blog da Rocketseat'} width={286 / 2} />
 
         <nav className={styles.nav} aria-label="Rodpé">
-          <button type='button' onClick={handleModalOpen} aria-controls='modal1'>
+          <button type='button'>
             Termos de uso
           </button>
         </nav>
       </footer>
 
       {/* modal */}
-      {isModalOpen && (
-        <div
-        id='modal1'
-          ref={modalRef}
-          className={styles.modal}
-          role="dialog"
-          arial-aria-labelledby='modal1Title'
-          aria-describedby='modal1Description'
-          tabIndex={-1}>
-          <button onClick={(e) => setIsModalOpen(false)} className={styles.buttonClose}>X</button>
-          <h2 id='modal1Title'>Termos de uso</h2>
-          <p id='modal1Description'>esse são os temos de uso</p>
-        </div>
-      )}
+      <div className={styles.modal}>
+        <h2 >Termos de uso</h2>
+        <p>esse são os temos de uso</p>
+      </div>
     </>
   )
 }

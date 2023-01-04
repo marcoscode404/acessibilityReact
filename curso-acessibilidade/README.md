@@ -18,3 +18,6 @@
  - plugin para leitores de tela
  - Screen Reader
  -->
+
+ <!-- install radix -->
+# yarn add @radix-ui/react-dialog
